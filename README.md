@@ -1,4 +1,4 @@
-# Datacash
+# Datacash for Bitcore (BTX)
 
 ![logo](logo.png)
 
