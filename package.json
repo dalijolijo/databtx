@@ -3,6 +3,10 @@
   "version": "1.2.0",
   "description": "post data over bitcore",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dalijolijo/datacash-btx.git"
+  },
   "scripts": {
     "test": "mocha",
     "build": "browserify index.js --standalone datacash-btx > dist/datacash.js && uglifyjs dist/datacash.js > dist/datacash.min.js"

@@ -38,10 +38,11 @@ Post to both Memo.cash and Blockpress with a single interface.
 ## 1. In node.js
 
 ```
-npm install datacash-btx
+npm install
 ```
+Hint: If error SSL Error: CERT_UNTRUSTED occur you can bypass https using ``npm config set strict-ssl false``
 
-and then require it
+And then require it
 
 ```
 const datacash = require('datacash-btx')
@@ -123,7 +124,7 @@ And that's it! No complex APIs, but you can construct pretty much all kinds of O
 
 `datacash` was created in order to make it dead simple to construct `OP_RETURN` related transactions, but you can even use it to build regular transactions.
 
-Also `datacash` exposes `datacash.btx` endpoint which you can use to access the underlying `bitcore-lib-cash` library. If you need more sophisticated features (in most cases you won't), feel free to use this feature. Best of both worlds!
+Also `datacash` exposes `datacash.btx` endpoint which you can use to access the underlying `bitcore-lib-btx` library. If you need more sophisticated features (in most cases you won't), feel free to use this feature. Best of both worlds!
 
 ---
 
