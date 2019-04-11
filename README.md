@@ -81,7 +81,7 @@ var config = {
   data: ["0x6d02", "hello from datacash"],
   cash: {
     key: "5JZ4RXH4MoXpaUQMcJHo8DxhZtkf5U5VnYd9zZH8BRKZuAbxZEw",
-    rpc: "https://cashexplorer.bitcoin.com",
+    rpc: "https://insight.bitcore.cc",
     fee: 250,
     to: [{
       address: "1A2JN4JAUoKCQ5kA4pHhu4qCqma8jZSU81",
@@ -96,7 +96,7 @@ Above config describes a transaction that:
 - Posts `"hello from datacash"` to [memo.cash](https://memo.cash) network (See the protocol at [https://memo.cash/protocol](https://memo.cash/protocol)),
 - paying the fee of `250` satoshis,
 - signed with a private key: `5JZ4RXH4MoXpaUQMcJHo8DxhZtkf5U5VnYd9zZH8BRKZuAbxZEw`,
-- through a public JSON-RPC endpoint at [https://cashexplorer.bitcoin.com](https://cashexplorer.bitcoin.com)
+- through a public JSON-RPC endpoint at [https://insight.bitcore.cc](https://insight.bitcore.cc)
 - while tipping the user `1A2JN4JAUoKCQ5kA4pHhu4qCqma8jZSU81` a value of `1000` satoshis.
 
 All you need to do to invoke it is call:
@@ -241,14 +241,14 @@ datacash.build(tx, function(err, tx) {
 
 The `rpc` attribute is used to manually set the JSON-RPC endpoint you wish to broadcast through. 
 
-- default: `https://cashexplorer.bitcoin.com`
+- default: `https://insight.bitcore.cc`
 
 ```
 const tx = {
   data: ["0x6d02", "hello world"],
   cash: {
     key: "5JZ4RXH4MoXpaUQMcJHo8DxhZtkf5U5VnYd9zZH8BRKZuAbxZEw",
-    rpc: "https://cashexplorer.bitcoin.com"
+    rpc: "https://insight.bitcore.cc"
   }
 };
 datacash.build(tx, function(err, res) {
@@ -270,7 +270,7 @@ const tx = {
   data: ["0x6d02", "hello world"],
   cash: {
     key: "5JZ4RXH4MoXpaUQMcJHo8DxhZtkf5U5VnYd9zZH8BRKZuAbxZEw",
-    rpc: "https://cashexplorer.bitcoin.com",
+    rpc: "https://insight.bitcore.cc",
     fee: 250
   }
 }
@@ -288,7 +288,7 @@ The `to` attribute is an array of receivers to send the OP_RETURN to. Normally t
 
 - default: `null`
 - Each item in the `to` array can have 2 attributes:
-  - address: Bitcoin cash address string
+  - address: Bitcore address string
   - value: number (in satoshi)
 
 ```
@@ -465,7 +465,7 @@ Using this endpoint you can connect to a public JSON-RPC endpoint to let you mak
 datacash.connect([RPC ENDPOINT]).[METHOD]
 ```
 
-If you leave the `RPC ENDPOINT` part out, it will automatically use the default https://cashexplorer.bitcoin.com node
+If you leave the `RPC ENDPOINT` part out, it will automatically use the default https://insight.bitcore.cc node
 
 ### Example 1: Connecting to default node and calling `getUnspentUtxos()` method:
 
@@ -482,7 +482,7 @@ datacash.connect().getUnspentUtxos("14xMz8rKm4L83RuZdmsHXD2jvENZbv72vR", functio
 ### Example 2. Specifying a JSON-RPC endpoint
 
 ```
-datacash.connect('https://cashexplorer.bitcoin.com').getUnspentUtxos("14xMz8rKm4L83RuZdmsHXD2jvENZbv72vR", function(err, utxos) {
+datacash.connect('https://insight.bitcore.cc').getUnspentUtxos("14xMz8rKm4L83RuZdmsHXD2jvENZbv72vR", function(err, utxos) {
   if (err) {
     console.log("Error: ", err)
   } else {

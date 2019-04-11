@@ -482,7 +482,7 @@ describe('datacash', function() {
       it('default', function() {
         var insight = datacash.connect();
         assert.equal(insight.constructor.name, "Insight")
-        assert.equal(insight.url, 'https://cashexplorer.bitcoin.com')
+        assert.equal(insight.url, 'https://insight.bitcore.cc')
       })
       it('connect with url', function() {
         var insight = datacash.connect('https://cashexplorer2.bitcoin.com');

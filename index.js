@@ -1,7 +1,7 @@
 const btx = require('bitcore-lib-btx');
 const explorer = require('bitcore-explorers');
 const defaults = {
-  rpc: "https://cashexplorer.bitcoin.com",
+  rpc: "https://insight.bitcore.cc",
   fee: 400
 }
 // The end goal of 'build' is to create a hex formated transaction object
