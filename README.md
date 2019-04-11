@@ -2,7 +2,7 @@
 
 ![logo](logo.png)
 
-Datacash is the simplest library for building and broadcasting Bitcoin Cash OP_RETURN transactions.
+Datacash is the simplest library for building and broadcasting Bitcore OP_RETURN transactions.
 
 ---
 
@@ -18,7 +18,7 @@ Post to the blockchain with just 4 lines of code.
 
 ## 1. Datacash Transaction Composer
 
-- [Datacash transaction composer](https://unwriter.github.io/datacash/example/composer.html)
+- [Datacash transaction composer](https://dalijolijo.github.io/datacash-btx/example/composer.html)
 
 - [View source](example/composer.html)
 
@@ -26,7 +26,7 @@ Post to the blockchain with just 4 lines of code.
 
 Post to both Memo.cash and Blockpress with a single interface.
 
-- [DEMO](https://unwriter.github.io/datacash/example/playground.html)
+- [DEMO](https://dalijolijo.github.io/datacash-btx/example/playground.html)
 
 - [View source](example/playground.html)
 
@@ -38,13 +38,13 @@ Post to both Memo.cash and Blockpress with a single interface.
 ## 1. In node.js
 
 ```
-npm install datacash
+npm install datacash-btx
 ```
 
 and then require it
 
 ```
-const datacash = require('datacash')
+const datacash = require('datacash-btx')
 ```
 
 ## 2. In browser
@@ -68,7 +68,7 @@ datacash.send({
 });
 ```
 
-Above code builds an `OP_RETURN` transaction with `0x6d02 hello` as push data, and broadcasts it to Bitcoin Cash network.
+Above code builds an `OP_RETURN` transaction with `0x6d02 hello` as push data, and broadcasts it to Bitcore network.
 
 ---
 
@@ -119,11 +119,11 @@ And that's it! No complex APIs, but you can construct pretty much all kinds of O
 
 # How it works
 
-`datacash` is powered by [bitcore-lib-cash](https://github.com/bitpay/bitcore-lib-cash), which in turn is a fork of [bitcore-lib](https://github.com/bitpay/bitcore-lib), which means all the low level transactions are completely robust and secure.
+`datacash-btx` is powered by [bitcore-lib-btx](https://github.com/dalijolijo/bitcore-lib-btx), which in turn is a fork of [bitcore-lib](https://github.com/bitpay/bitcore-lib), which means all the low level transactions are completely robust and secure.
 
 `datacash` was created in order to make it dead simple to construct `OP_RETURN` related transactions, but you can even use it to build regular transactions.
 
-Also `datacash` exposes `datacash.bch` endpoint which you can use to access the underlying `bitcore-lib-cash` library. If you need more sophisticated features (in most cases you won't), feel free to use this feature. Best of both worlds!
+Also `datacash` exposes `datacash.btx` endpoint which you can use to access the underlying `bitcore-lib-cash` library. If you need more sophisticated features (in most cases you won't), feel free to use this feature. Best of both worlds!
 
 ---
 
@@ -168,8 +168,8 @@ const tx = {
 }
 datacash.build(tx, function(err, tx) {  
   /**
-  * res contains the generated transaction object, powered by bitcore-lib-cash
-  * You can check it out at https://github.com/bitpay/bitcore-lib-cash/blob/master/lib/transaction/transaction.js
+  * res contains the generated transaction object, powered by bitcore-lib-btx
+  * You can check it out at https://github.com/dalijolijo/bitcore-lib-btx/blob/master/lib/transaction/transaction.js
   * Some available methods you can call on the tx object are:
   * 1. tx.toString() => Export as string
   * 2. tx.toObject() => Inspect the transaction as JSON object
@@ -197,8 +197,8 @@ const tx = {
 }
 datacash.build(tx, function(err, tx) {
   /**
-  * res contains the generated transaction object, powered by bitcore-lib-cash
-  * You can check it out at https://github.com/bitpay/bitcore-lib-cash/blob/master/lib/transaction/transaction.js
+  * res contains the generated transaction object, powered by bitcore-lib-btx
+  * You can check it out at https://github.com/dalijolijo/bitcore-lib-btx/blob/master/lib/transaction/transaction.js
   * Some available methods you can call on the tx object are:
   * 1. tx.toString() => Export as string
   * 2. tx.toObject() => Inspect the transaction as JSON object
@@ -436,19 +436,19 @@ datacash.send({
 
 Datacash depends on two powerful libraries for low level stuff.
 
-1. bitcore-lib-cash: https://github.com/bitpay/bitcore-lib-cash
+1. bitcore-lib-btx: https://github.com/dalijolijo/bitcore-lib-btx
 2. bitcore-explorers: https://github.com/bitpay/bitcore-explorers
 
 While Datacash is designed to be the simplest possible way to write data to the blockchain, you may want to sometimes access the low level libraries that power datacash.
 
 Datacash exposes additional endpoints so you can simply access these libraries without having to install or include any additional libraries.
 
-## 1. datacash.bch
+## 1. datacash.btx
 
-This endpoint exposes the [bitcore-lib-cash](https://github.com/bitpay/bitcore-lib-cash) library object. Basically by referncing `bch` you have access to the entire bitcore-lib-cash library.
+This endpoint exposes the [bitcore-lib-btx](https://github.com/dalijolijo/bitcore-lib-btx) library object. Basically by referncing `btx` you have access to the entire bitcore-lib-btx library.
 
 ```
-const privateKey = new datacash.bch.PrivateKey();
+const privateKey = new datacash.btx.PrivateKey();
 const address = privateKey.toAddress();
 console.log(address.toString()) // 15WZwpw3BofscM2u43ji85BXucai5YGToL
 ```
