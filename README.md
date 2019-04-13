@@ -51,7 +51,7 @@ const datacash = require('datacash-btx')
 ## 2. In browser
 
 ```
-<script src='https://unpkg.com/datacash'></script>
+<script src='https://unpkg.com/datacash-btx'></script>
 ```
 
 ---

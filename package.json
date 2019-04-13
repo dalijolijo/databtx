@@ -1,6 +1,6 @@
 {
   "name": "datacash-btx",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "post data over bitcore",
   "main": "index.js",
   "repository": {
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "build": "browserify index.js --standalone datacash-btx > dist/datacash.js && uglifyjs dist/datacash.js > dist/datacash.min.js"
+    "build": "browserify index.js --standalone datacash-btx > dist/datacash-btx.js && uglifyjs dist/datacash-btx.js > dist/datacash-btx.min.js"
   },
   "keywords": [
     "btx",
@@ -17,7 +17,7 @@
   ],
   "author": "unwriter",
   "license": "ISC",
-  "unpkg": "dist/datacash.min.js",
+  "unpkg": "dist/datacash-btx.min.js",
   "dependencies": {
     "bitcore-explorers": "^1.0.1",
     "bitcore-lib-btx": "git://github.com/dalijolijo/bitcore-lib-btx#master"
